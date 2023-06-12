@@ -8,6 +8,12 @@ metadata:
   name: springappdeployment
 spec:
   replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+       maxSurge: 1
+       maxUnavailable: 1
+  minReadySeconds: 30 
   selector:
     matchLabels:
       app: springapp
