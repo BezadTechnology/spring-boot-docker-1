@@ -9,11 +9,10 @@ metadata:
 spec:
   replicas: 2
   strategy:
-    type: RollingUpdate
     rollingUpdate:
-       maxSurge: 1
-       maxUnavailable: 1
-  minReadySeconds: 30 
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   selector:
     matchLabels:
       app: springapp
